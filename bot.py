@@ -5,6 +5,10 @@ from discord.utils import get
 from discord.ext.commands import Cog, Greedy
 from discord.ext.commands import CheckFailure
 from discord.ext.commands import command, has_permissions, bot_has_permissions
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 client = discord.Client()
 commands = discord.ext.commands
 MensagemProibida = ["lepo","lepo lepo", "kid abelha", "madrid","coringatron"]
@@ -57,7 +61,6 @@ async def on_message(message):
             return        
     else:
         return
-
-client.run('ODAxMTcwNTI2MTE4MzQ2NzUy.YAcyMg.mVyRGZR1JB8OwFviA4cdR3xgx8A')
-
-
+token = os.getenv('token')
+print(token)
+client.run(token)
